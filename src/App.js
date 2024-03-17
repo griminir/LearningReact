@@ -74,35 +74,75 @@
 //   );
 // }
 
-function App() {
-  //exampel 2 array's
-  const userInfo = [
-    {
-      username: 'grimnir',
-      email: 'test@gmail.com',
-      location: 'NO',
-    },
-    {
-      username: 'oskar',
-      email: 'test2@gmail.com',
-      location: 'UK',
-    },
-    {
-      username: 'timmy',
-      email: 'test3@gmail.com',
-      location: 'US',
-    },
-  ];
+// function App() {
+//   //exampel 2 array's
+//   const userInfo = [
+//     {
+//       username: 'grimnir',
+//       email: 'test@gmail.com',
+//       location: 'NO',
+//     },
+//     {
+//       username: 'oskar',
+//       email: 'test2@gmail.com',
+//       location: 'UK',
+//     },
+//     {
+//       username: 'timmy',
+//       email: 'test3@gmail.com',
+//       location: 'US',
+//     },
+//   ];
 
+//   return (
+//     <>
+//       {userInfo.map((user) => (
+//         <ul key={Math.random() * 10}>
+//           <li>{user.username}</li>
+//           <li>{user.email}</li>
+//           <li>{user.location}</li>
+//         </ul>
+//       ))}
+//     </>
+//   );
+// }
+
+// //props check components/User
+// import User from './components/User';
+// function App() {
+//   return (
+//     <>
+//       <User
+//         name='viktor'
+//         img='https://i.pinimg.com/originals/76/94/bd/7694bd7519adc697cd43ff19e9588894.jpg'
+//         age={18}
+//         hobbies={['Coding', 'Gaming', 'Sleeping']}
+//       >
+//         <p>
+//           keyword called children is the special name for jsx nested inside a
+//           component
+//         </p>
+//       </User>
+//     </>
+//   );
+// }
+
+//conditonal rendering
+const ValidPassword = () => <h1>Valid Password</h1>;
+const InvalidPassword = () => <h1>Invalid Password</h1>;
+
+const Password = ({ isValid }) => {
+  if (isValid) {
+    return <ValidPassword />;
+  } else {
+    return <InvalidPassword />;
+  }
+};
+
+function App() {
   return (
     <>
-      {userInfo.map((user) => (
-        <ul key={Math.random() * 10}>
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>{user.location}</li>
-        </ul>
-      ))}
+      <Password isValid={true} />
     </>
   );
 }
