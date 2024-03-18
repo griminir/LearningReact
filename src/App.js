@@ -127,24 +127,163 @@
 //   );
 // }
 
-//conditonal rendering
-const ValidPassword = () => <h1>Valid Password</h1>;
-const InvalidPassword = () => <h1>Invalid Password</h1>;
+// //conditonal rendering
+// const ValidPassword = () => <h1>Valid Password</h1>;
+// const InvalidPassword = () => <h1>Invalid Password</h1>;
 
-const Password = ({ isValid }) => {
-  if (isValid) {
-    return <ValidPassword />;
-  } else {
-    return <InvalidPassword />;
-  }
+// const Password = ({ isValid }) => {
+//   if (isValid) {
+//     return <ValidPassword />;
+//   } else {
+//     return <InvalidPassword />;
+//   }
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <Password isValid={true} />
+//     </>
+//   );
+// }
+
+// //&& operator
+// const Cart = () => {
+//   const items = ['Wireless Earbuds', 'Power Bank', 'Expensive MTG Card'];
+
+//   return (
+//     <>
+//       <h1>Cart 🛒</h1>
+
+//       {items.length > 0 && <h2>You have {items.length} items in cart</h2>}
+
+//       <ul>
+//         <h4>👇 Products</h4>
+//         {items.map((item) => (
+//           <li key={Math.random()}>{item}</li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <Cart />
+//     </>
+//   );
+// }
+
+// //styling inline not reccomended
+// function App() {
+//   return (
+//     <>
+//       <h1 style={{ color: 'steelblue', backgroundColor: '#ccc' }}>
+//         Hello I am React
+//       </h1>
+//     </>
+//   );
+// }
+
+// //styling via inline variabel not recomended
+// const style1 = {
+//   color: 'teal',
+//   backgroundColor: 'crimson',
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <h1
+//         style={{ color: style1.color, backgroundColor: style1.backgroundColor }}
+//       >
+//         Hello I am React
+//       </h1>
+//     </>
+//   );
+// }
+
+// //styling via other file
+// //extention is important
+// import './index.css';
+
+// function App() {
+//   return (
+//     <>
+//       <h1>Hello I am React</h1>
+//     </>
+//   );
+// }
+
+// //needed for react bootstrap also check index.js file for what is needed in there
+// // npm install react-bootstrap bootstrap
+// import Button from 'react-bootstrap/Button';
+
+// function Buttons() {
+//   return (
+//     <>
+//       <Button variant='outline-primary'>Primary</Button>
+//       <Button variant='outline-secondary'>Secondary</Button>
+//       <Button variant='outline-success'>Success</Button>
+//       <Button variant='outline-warning'>Warning</Button>
+//       <Button variant='outline-danger'>Danger</Button>
+//       <Button variant='outline-info'>Info</Button>
+//       <Button variant='outline-light'>Light</Button>
+//       <Button variant='outline-dark'>Dark</Button>
+//     </>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <>
+//       <h1>Hello I am React</h1>
+//       <Buttons />
+//     </>
+//   );
+// }
+
+// //styling with tailwind css
+// //install: npm install -D tailwindcss
+// //add to project: npx tailwindcss init
+// //index2.css needed for tailwind css same with tailwind.config.js
+// //check index.js for more
+// function App() {
+//   return (
+//     <>
+//       <h1>Hello I am React</h1>
+//       <h1 class='text-orange-800 text-3xl font-bold underline'>Hello world!</h1>
+//     </>
+//   );
+// }
+
+// //react icons go to react-icons and find the one you like
+// //npm install react-icons --save
+// import { BsFillCartCheckFill } from 'react-icons/bs';
+
+// function App() {
+//   return (
+//     <>
+//       <BsFillCartCheckFill />
+//     </>
+//   );
+// }
+
+//events inline events with params
+const handleClick = (a, b) => {
+  console.log(a, b);
+};
+
+const Button = () => {
+  return <button onClick={() => handleClick('hell', 'no')}>Touch me</button>;
 };
 
 function App() {
   return (
     <>
-      <Password isValid={true} />
+      <Button />
     </>
   );
 }
-
 export default App;
