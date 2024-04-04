@@ -270,19 +270,190 @@
 //   );
 // }
 
-//events inline events with params
-const handleClick = (a, b) => {
-  console.log(a, b);
-};
+// //events inline events with params
+// const handleClick = (a, b) => {
+//   console.log(a, b);
+//   console.log('this', 'is', 'me');
+// };
 
-const Button = () => {
-  return <button onClick={() => handleClick('hell', 'no')}>Touch me</button>;
-};
+// //need this arrow function between click and handleclick so the fucntion dont run on load
+// const Button = () => {
+//   return <button onClick={() => handleClick('hell', 'no')}>Touch me</button>;
+// };
 
+// function App() {
+//   return (
+//     <>
+//       <Button />
+//     </>
+//   );
+// }
+
+// //used to do something when someone copies something
+// const Copy = () => {
+//   const copyHandler = () => {
+//     alert('stop stealing my content');
+//   };
+
+//   return (
+//     <>
+//       <p onCopy={copyHandler}>lorem ipsum, dolor sit amet</p>
+//     </>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <Copy />
+//     </>
+//   );
+// }
+
+// //just a simple mouseover event
+// const Move = () => {
+//   const moveHandler = () => {
+//     console.log('you hovered me');
+//   };
+
+//   return (
+//     <>
+//       <p onMouseMove={moveHandler}>lorem ipsum, dolor sit amet</p>
+//     </>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <Move />
+//     </>
+//   );
+// }
+
+// //state as in the state of something
+// //hooks lets you use state and other react features without writing a class
+// import { useState } from 'react';
+
+// const Counter = () => {
+//   //you can use any name in the brackets what ever you call the first one you call the second one set(firstname) this is a naming convension count word lets us store data and setCount allows us to change that data this is also called array destructuring what happens between the []
+//   const [count, setCount] = useState(0);
+
+//   const increment = () => {
+//     setCount(count + 1);
+//   };
+
+//   const reduction = () => {
+//     setCount(count - 1);
+//   };
+
+//   return (
+//     <>
+//       <h1>{count}</h1>
+//       <button onClick={increment}>+</button>
+//       <button onClick={reduction}>-</button>
+//     </>
+//   );
+// };
+
+// function App() {
+//   return (
+//     <>
+//       <Counter />
+//     </>
+//   );
+// }
+
+// //updating arrays in state
+// import { useState } from 'react';
+
+// function App() {
+//   const [friends, setFriends] = useState(['alex', 'henry']);
+
+//   const addOne = () => {
+//     setFriends([...friends, 'timmy']);
+//   };
+
+//   const removeOne = () => {
+//     setFriends(friends.filter((f) => f !== 'timmy'));
+//   };
+
+//   const updateOne = () => {
+//     setFriends(friends.map((f) => (f === 'timmy' ? 'the timmy' : f)));
+//   };
+
+//   return (
+//     <>
+//       {friends.map((f) => (
+//         <li key={Math.random()}>{f}</li>
+//       ))}
+
+//       <button onClick={addOne}>add one</button>
+//       <button onClick={removeOne}>remove one</button>
+//       <button onClick={updateOne}>update one</button>
+//     </>
+//   );
+// }
+
+// //change state of objects
+// import { useState } from 'react';
+
+// function App() {
+//   const [movie, setMovie] = useState({
+//     title: 'the great gatsby',
+//     rating: 10,
+//   });
+
+//   const updateRating = () => {
+//     //the long way to write the code
+//     // const copyMovie = {
+//     //   ...movie,
+//     //   rating: 5,
+//     // };
+
+//     // setMovie(copyMovie);
+
+//     //faster way
+//     setMovie({ ...movie, rating: 5 });
+//   };
+//   return (
+//     <>
+//       <h1>{movie.title}</h1>
+//       <p>rating {movie.rating}</p>
+//       <button onClick={updateRating}>Change rating</button>
+//     </>
+//   );
+// }
+
+// //arrays in objects
+// import { useState } from 'react';
+
+// function App() {
+//   const [movies, setMovies] = useState([
+//     { id: 1, title: 'pirates', ratings: 7 },
+//     { id: 2, title: 'heroes 5', ratings: 2 },
+//   ]);
+
+//   const updateMovie = () => {
+//     setMovies(
+//       movies.map((m) => (m.id === 1 ? { ...movies, title: 'john wick 4' } : m))
+//     );
+//   };
+//   return (
+//     <>
+//       {movies.map((movie) => (
+//         <li key={Math.random()}>{movie.title}</li>
+//       ))}
+//       <button onClick={updateMovie}>change name</button>
+//     </>
+//   );
+// }
+
+//forms in react
 function App() {
   return (
     <>
-      <Button />
+      <h1>forms next</h1>
     </>
   );
 }
